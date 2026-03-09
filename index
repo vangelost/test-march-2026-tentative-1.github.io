@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>European Research Project</title>
+
+<style>
+
+body{
+font-family: "Segoe UI", Arial;
+margin:0;
+background:#f4f6fb;
+color:#333;
+}
+
+header{
+background:#003399;
+color:white;
+padding:25px;
+text-align:center;
+}
+
+nav{
+background:#002266;
+padding:12px;
+text-align:center;
+}
+
+nav a{
+color:white;
+margin:15px;
+text-decoration:none;
+font-weight:600;
+}
+
+.hero{
+background:linear-gradient(rgba(0,0,0,0.45),rgba(0,0,0,0.45)),
+url("hero.jpg");
+background-size:cover;
+color:white;
+text-align:center;
+padding:120px 20px;
+}
+
+.hero h1{
+font-size:42px;
+margin-bottom:10px;
+}
+
+.container{
+max-width:1100px;
+margin:auto;
+padding:50px 20px;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+}
+
+.card{
+background:white;
+padding:25px;
+border-radius:10px;
+box-shadow:0 5px 12px rgba(0,0,0,0.1);
+}
+
+.section-title{
+text-align:center;
+margin-bottom:40px;
+}
+
+footer{
+background:#003399;
+color:white;
+text-align:center;
+padding:25px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<h2>PROJECT NAME</h2>
+<p>Innovative Research for Sustainable Plant Systems</p>
+
+</header>
+
+<nav>
+
+<a href="#about">About</a>
+<a href="#objectives">Objectives</a>
+<a href="#workpackages">Work Packages</a>
+<a href="#consortium">Consortium</a>
+<a href="#publications">Publications</a>
+<a href="#news">News</a>
+<a href="#contact">Contact</a>
+
+</nav>
+
+<section class="hero">
+
+<h1>European Research Project</h1>
+<p>Advancing sustainable plant science through international collaboration</p>
+
+</section>
+
+<section class="container" id="about">
+
+<h2 class="section-title">About the Project</h2>
+
+<p>
+This project aims to develop innovative scientific strategies to improve plant resilience and sustainability through biological interactions and advanced molecular approaches.
+</p>
+
+</section>
+
+<section class="container" id="objectives">
+
+<h2 class="section-title">Project Objectives</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>Objective 1</h3>
+<p>Investigate plant–microbe interactions.</p>
+</div>
+
+<div class="card">
+<h3>Objective 2</h3>
+<p>Develop sustainable crop improvement strategies.</p>
+</div>
+
+<div class="card">
+<h3>Objective 3</h3>
+<p>Apply molecular tools to understand biological mechanisms.</p>
+</div>
+
+</div>
+
+</section>
+
+<section class="container" id="workpackages">
+
+<h2 class="section-title">Work Packages</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>WP1</h3>
+<p>Project coordination and management.</p>
+</div>
+
+<div class="card">
+<h3>WP2</h3>
+<p>Experimental research and data generation.</p>
+</div>
+
+<div class="card">
+<h3>WP3</h3>
+<p>Data analysis and modelling.</p>
+</div>
+
+<div class="card">
+<h3>WP4</h3>
+<p>Dissemination and outreach.</p>
+</div>
+
+</div>
+
+</section>
+
+<section class="container" id="consortium">
+
+<h2 class="section-title">Consortium</h2>
+
+<p>
+List of universities, research institutes and partners involved in the project.
+</p>
+
+</section>
+
+<section class="container" id="publications">
+
+<h2 class="section-title">Publications</h2>
+
+<p>
+Scientific publications, datasets and project outputs will be listed here.
+</p>
+
+</section>
+
+<section class="container" id="news">
+
+<h2 class="section-title">News</h2>
+
+<p>
+Project updates, conferences and milestones.
+</p>
+
+</section>
+
+<section class="container" id="contact">
+
+<h2 class="section-title">Contact</h2>
+
+<p>Email: your.email@institution.eu</p>
+
+</section>
+
+<footer>
+
+<p>
+This project has received funding from the European Union research programme.
+</p>
+
+<p>© 2026 Project Consortium</p>
+
+</footer>
+
+</body>
+
+</html>
