@@ -9,32 +9,18 @@
 
 <style>
 
+/* GENERAL */
+
 body{
 font-family:"Segoe UI", Arial;
 margin:0;
 background:#f3faf4;
 color:#333;
 }
-.header-container{
-display:flex;
-align-items:center;
-justify-content:center;
-gap:20px;
-}
 
-.logo{
-height:120px;
-}
+/* HEADER */
 
-.project-title h2{
-margin:0;
-}
-
-.project-title p{
-margin:0;
-font-size:20px;
-}
-  header{
+header{
 background:white;
 padding:20px 40px;
 border-bottom:1px solid #e5e5e5;
@@ -79,6 +65,124 @@ gap:20px;
 .partner-logo{
 height:60px;
 }
+
+/* NAVBAR */
+
+nav{
+background:#3d9a63;
+padding:12px;
+text-align:center;
+}
+
+nav a{
+color:white;
+margin:15px;
+text-decoration:none;
+font-weight:600;
+font-size:17px;
+}
+
+/* HERO */
+
+.hero{
+background:linear-gradient(rgba(0,0,0,0.45),rgba(0,0,0,0.45)), url("hero.jpg");
+background-size:cover;
+background-position:center;
+color:white;
+text-align:center;
+padding:120px 20px;
+}
+
+.hero h1{
+font-size:42px;
+margin-bottom:10px;
+}
+
+/* CONTENT */
+
+.container{
+max-width:1100px;
+margin:auto;
+padding:60px 20px;
+}
+
+.section-title{
+text-align:center;
+margin-bottom:40px;
+font-size:32px;
+color:#2f7d4f;
+}
+
+/* GRID */
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+}
+
+.card{
+background:white;
+padding:25px;
+border-radius:10px;
+box-shadow:0 5px 12px rgba(0,0,0,0.08);
+}
+
+/* CAROUSEL */
+
+.carousel{
+overflow:hidden;
+width:100%;
+margin-top:40px;
+}
+
+.carousel-track{
+display:flex;
+width:200%;
+animation:scroll 25s linear infinite;
+align-items:center;
+}
+
+.carousel-track img{
+height:70px;
+margin:0 40px;
+filter:grayscale(100%);
+opacity:0.8;
+transition:0.3s;
+}
+
+.carousel-track img:hover{
+filter:grayscale(0%);
+opacity:1;
+}
+
+@keyframes scroll{
+
+0%{
+transform:translateX(0);
+}
+
+100%{
+transform:translateX(-50%);
+}
+
+}
+
+/* FOOTER */
+
+footer{
+background:#2f7d4f;
+color:white;
+text-align:center;
+padding:30px;
+}
+
+</style>
+
+</head>
+
+<body>
+
 <header>
 
 <div class="header-container">
@@ -100,86 +204,6 @@ height:60px;
 <img src="partner_logo2.png" class="partner-logo">
 <img src="partner_logo3.png" class="partner-logo">
 
-</div>
-
-</div>
-
-</header>
-}
-
-nav{
-background:#3d9a63;
-padding:12px;
-text-align:center;
-}
-
-nav a{
-color:white;
-margin:15px;
-text-decoration:none;
-font-weight:600;
-}
-
-.hero{
-background:linear-gradient(rgba(0,0,0,0.45),rgba(0,0,0,0.45)),
-url("hero.jpg");
-background-size:cover;
-color:white;
-text-align:center;
-padding:120px 20px;
-}
-
-.hero h1{
-font-size:42px;
-margin-bottom:10px;
-}
-
-.container{
-max-width:1100px;
-margin:auto;
-padding:50px 20px;
-}
-
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:25px;
-}
-
-.card{
-background:white;
-padding:25px;
-border-radius:10px;
-box-shadow:0 5px 12px rgba(0,0,0,0.1);
-}
-
-.section-title{
-text-align:center;
-margin-bottom:40px;
-}
-
-footer{
-background:#2f7d4f;
-color:white;
-text-align:center;
-padding:25px;
-}
-
-</style>
-
-</head>
-
-<body>
-
-<header>
-
-<div class="header-container">
-
-<img src="logo.png" alt="Project Logo" class="logo">
-
-<div class="project-title">
-<h2>SAGA</h2>
-<p>Innovative Research for Sustainable Plant Systems</p>
 </div>
 
 </div>
@@ -274,9 +298,25 @@ This project aims to develop innovative scientific strategies to improve plant r
 
 <h2 class="section-title">Consortium</h2>
 
-<p>
-List of universities, research institutes and partners involved in the project.
-</p>
+<div class="carousel">
+
+<div class="carousel-track">
+
+<img src="partner1.png">
+<img src="partner2.png">
+<img src="partner3.png">
+<img src="partner4.png">
+<img src="partner5.png">
+
+<img src="partner1.png">
+<img src="partner2.png">
+<img src="partner3.png">
+<img src="partner4.png">
+<img src="partner5.png">
+
+</div>
+
+</div>
 
 </section>
 
@@ -284,9 +324,7 @@ List of universities, research institutes and partners involved in the project.
 
 <h2 class="section-title">Publications</h2>
 
-<p>
-Scientific publications, datasets and project outputs will be listed here.
-</p>
+<p>Scientific articles, datasets and reports will be listed here.</p>
 
 </section>
 
@@ -294,9 +332,7 @@ Scientific publications, datasets and project outputs will be listed here.
 
 <h2 class="section-title">News</h2>
 
-<p>
-Project updates, conferences and milestones.
-</p>
+<p>Project updates, conferences and achievements.</p>
 
 </section>
 
@@ -310,9 +346,7 @@ Project updates, conferences and milestones.
 
 <footer>
 
-<p>
-This project has received funding from the European Union research programme.
-</p>
+<p>This project has received funding from the European Union research programme.</p>
 
 <p>© 2026 Project Consortium</p>
 
