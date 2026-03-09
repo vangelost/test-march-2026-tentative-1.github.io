@@ -34,11 +34,77 @@ margin:0;
 margin:0;
 font-size:14px;
 }
-header{
-background:#2f7d4f;
-color:white;
-padding:25px;
-text-align:center;
+  header{
+background:white;
+padding:20px 40px;
+border-bottom:1px solid #e5e5e5;
+}
+
+.header-container{
+display:flex;
+align-items:center;
+justify-content:space-between;
+max-width:1200px;
+margin:auto;
+}
+
+.header-left{
+display:flex;
+align-items:center;
+gap:20px;
+}
+
+.logo{
+height:80px;
+}
+
+.project-title h1{
+margin:0;
+font-size:34px;
+color:#2f7d4f;
+}
+
+.project-title p{
+margin:5px 0 0 0;
+font-size:18px;
+color:#555;
+}
+
+.header-right{
+display:flex;
+align-items:center;
+gap:20px;
+}
+
+.partner-logo{
+height:60px;
+}
+<header>
+
+<div class="header-container">
+
+<div class="header-left">
+
+<img src="logo.png" alt="Project Logo" class="logo">
+
+<div class="project-title">
+<h1>PROJECT NAME</h1>
+<p>Innovative Research for Sustainable Plant Systems</p>
+</div>
+
+</div>
+
+<div class="header-right">
+
+<img src="partner_logo1.png" class="partner-logo">
+<img src="partner_logo2.png" class="partner-logo">
+<img src="partner_logo3.png" class="partner-logo">
+
+</div>
+
+</div>
+
+</header>
 }
 
 nav{
