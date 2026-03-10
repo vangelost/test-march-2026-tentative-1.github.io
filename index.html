@@ -148,6 +148,10 @@ animation:scroll 25s linear infinite;
 align-items:center;
 }
 
+.carousel:hover .carousel-track{
+animation-play-state:paused;
+}
+
 .carousel-track img{
 height:140px;
 margin:0 40px;
@@ -173,6 +177,35 @@ transform:translateX(-50%);
 
 }
 
+/* MAP */
+
+.map-container{
+position:relative;
+max-width:800px;
+margin:auto;
+}
+
+.europe-map{
+width:100%;
+}
+
+.map-point{
+position:absolute;
+width:18px;
+height:18px;
+background:#2f7d4f;
+border-radius:50%;
+transform:translate(-50%,-50%);
+cursor:pointer;
+box-shadow:0 0 0 6px rgba(47,125,79,0.2);
+transition:0.3s;
+}
+
+.map-point:hover{
+background:#1f5c38;
+transform:translate(-50%,-50%) scale(1.3);
+}
+  
 /* FOOTER */
 
 footer{
@@ -306,17 +339,35 @@ This project aims to develop innovative scientific strategies to improve plant r
 
 <div class="carousel-track">
 
-<img src="partner1.png">
-<img src="partner2.png">
-<img src="partner3.png">
-<img src="partner4.png">
+<a href="partner1.html"><img src="partner1.png"></a>
+<a href="partner2.html"><img src="partner2.png"></a>
+<a href="partner3.html"><img src="partner3.png"></a>
+<a href="partner4.html"><img src="partner4.png"></a>
+<a href="partner5.html"><img src="partner5.png"></a>
 
-<img src="partner1.png">
-<img src="partner2.png">
-<img src="partner3.png">
-<img src="partner4.png">
+<a href="partner1.html"><img src="partner1.png"></a>
+<a href="partner2.html"><img src="partner2.png"></a>
+<a href="partner3.html"><img src="partner3.png"></a>
+<a href="partner4.html"><img src="partner4.png"></a>
+<a href="partner5.html"><img src="partner5.png"></a>
 
 </div>
+
+</div>
+
+</section>
+
+<section class="container" id="map">
+
+<h2 class="section-title">Project Partners in Europe</h2>
+
+<div class="map-container">
+
+<img src="europe_map.png" class="europe-map">
+
+<a href="partner1.html" class="map-point" style="top:45%; left:52%;"></a>
+<a href="partner2.html" class="map-point" style="top:40%; left:30%;"></a>
+<a href="partner3.html" class="map-point" style="top:55%; left:65%;"></a>
 
 </div>
 
