@@ -66,6 +66,24 @@ gap:20px;
 height:60px;
 }
 
+.lang-switch{
+  position:absolute;
+  top:20px;
+  right:40px;
+  font-size:16px;
+}
+
+.lang-switch a{
+  color:#2f7d4f;
+  text-decoration:none;
+  font-weight:600;
+  margin-left:10px;
+}
+
+.lang-switch a:hover{
+  text-decoration:underline;
+}
+
 /* NAVBAR */
 
 nav{
@@ -293,6 +311,13 @@ height:14px;
 }
 
 }
+@media (max-width:768px){
+  .lang-switch{
+    position:static;
+    margin-top:10px;
+    text-align:center;
+  }
+}
   
 </style>
 
@@ -318,6 +343,10 @@ height:14px;
 
 <img src="partner_logo1.png" class="partner-logo">
 <img src="partner_logo2.png" class="partner-logo">
+
+<div class="lang-switch">
+  <a href="index.html">EN</a> | <a href="index-it.html">IT</a>
+</div>
 
 </div>
 
