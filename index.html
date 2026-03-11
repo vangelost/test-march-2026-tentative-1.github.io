@@ -100,6 +100,24 @@ font-weight:600;
 font-size:17px;
 }
 
+/* LANGUAGE DROPDOWN */
+
+.language-dropdown select{
+
+padding:8px 12px;
+
+border-radius:6px;
+
+border:1px solid #ccc;
+
+background:white;
+
+font-size:14px;
+
+cursor:pointer;
+
+}
+
 /* HERO */
 
 .hero{
@@ -340,6 +358,13 @@ height:90px;
 margin:0 20px;
 }
 
+.language-dropdown{
+margin-top:10px;
+}
+
+.language-dropdown select{
+width:120px;
+}
 .map-point{
 width:14px;
 height:14px;
@@ -372,8 +397,17 @@ height:14px;
 <img src="partner_logo1.png" class="partner-logo">
 <img src="partner_logo2.png" class="partner-logo">
 
-<div class="lang-switch">
-<a href="index.html">EN</a> | <a href="index-it.html">IT</a> | <a href="index-tr.html">TR</a> | <a href="index-tn.html">TN</a>
+<div class="language-dropdown">
+
+<select onchange="location = this.value;">
+
+<option value="index.html">🇬🇧 English</option>
+<option value="index_it.html">🇮🇹 Italiano</option>
+<option value="index_PT.html">PT Português</option>
+<option value="index_TR.html">TR Türkçe</option>
+<option value="index_TN.html">TN تونسي </option>  
+</select>
+
 </div>
 
 </div>
