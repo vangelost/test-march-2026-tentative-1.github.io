@@ -81,7 +81,24 @@ text-decoration:none;
 font-weight:600;
 font-size:17px;
 }
+   
+/* LANGUAGE DROPDOWN */
 
+.language-dropdown select{
+
+padding:8px 12px;
+
+border-radius:6px;
+
+border:1px solid #ccc;
+
+background:white;
+
+font-size:14px;
+
+cursor:pointer;
+
+}
 /* TITLE */
 
 .page-title{
@@ -155,9 +172,7 @@ text-align:center;
 padding:30px;
 margin-top:60px;
 }
-/* ========================= */
-/* MOBILE RESPONSIVE DESIGN */
-/* ========================= */
+/* MOBILE */
 
 @media (max-width:768px){
 
@@ -166,7 +181,15 @@ flex-direction:column;
 gap:15px;
 text-align:center;
 }
+  
+.header-right{
+flex-direction:column;
+gap:10px;
+}
 
+.lang-switch{
+margin-top:5px;
+}
 .header-left{
 flex-direction:column;
 }
@@ -181,6 +204,10 @@ font-size:26px;
 
 .partner-logo{
 height:45px;
+}
+
+.lang-switch{
+margin-top:10px;
 }
 
 nav{
@@ -202,7 +229,7 @@ font-size:22px;
 }
 
 .container{
-padding:40px 20px;
+padding:40px 25px;
 }
 
 .section-title{
@@ -218,6 +245,13 @@ height:90px;
 margin:0 20px;
 }
 
+.language-dropdown{
+margin-top:10px;
+}
+
+.language-dropdown select{
+width:120px;
+}
 .map-point{
 width:14px;
 height:14px;
@@ -238,8 +272,6 @@ height:14px;
 
 <img src="logo.png" class="logo">
 
-<div class="project-title">
-<h1>SAGA</h1>
 </div>
 
 </div>
@@ -249,6 +281,17 @@ height:14px;
 <img src="partner_logo1.png" class="partner-logo">
 <img src="partner_logo2.png" class="partner-logo">
 
+<div class="language-dropdown">
+
+<select onchange="location = this.value;">
+
+<option value="partner1.html">English</option>
+<option value="partner1_it.html">Italiano</option>
+<option value="partner1_PT.html">Português</option>
+<option value="partner1_TR.html">Türkçe</option>
+<option value="partner1_TN.html">تونسي </option>  
+</select>  
+   
 </div>
 
 </div>
@@ -332,9 +375,9 @@ Dr. Susanna Pecchia — Assistant professor expert in plant pathology and molecu
 
 <footer>
 
-<p>This project has received funding from the European Union research programme.</p>
+<p>SAGA is part of the PRIMA Programme supported by the European Union.</p>
 
-<p>© 2026 Project Consortium</p>
+<p>© 2026 SAGA Consortium</p>
 
 </footer>
 
