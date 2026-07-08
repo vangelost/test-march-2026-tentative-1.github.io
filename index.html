@@ -283,31 +283,101 @@ width:100%;
 .contact-box{
 text-align:center;
 margin-top:20px;
+max-width:600px;
+margin-left:auto;
+margin-right:auto;
+background:white;
+padding:45px 40px;
+border-radius:14px;
+box-shadow:0 8px 22px rgba(0,0,0,0.08);
 }
 
-.social-icons{
-margin-top:20px;
+.contact-subtitle{
+font-size:16px;
+color:#666;
+margin-bottom:25px;
 }
 
-.social-icons a{
-display:inline-block;
-margin:0 12px;
-}
-
-.social-icons img{
-height:50px;
-width:50px;
+.email-contact{
+display:inline-flex;
+align-items:center;
+gap:10px;
+font-size:19px;
+font-weight:600;
+color:#2f7d4f;
+margin-top:0;
+padding:12px 24px;
+border:2px solid #2f7d4f;
+border-radius:30px;
+text-decoration:none;
 transition:0.3s;
 }
 
-.social-icons img:hover{
-transform:scale(1.2);
+.email-contact:hover{
+background:#2f7d4f;
+color:white;
 }
-  
+
+.email-contact a{
+color:inherit;
+text-decoration:none;
+}
+
+.social-label{
+font-size:15px;
+color:#888;
+margin-top:35px;
+margin-bottom:15px;
+text-transform:uppercase;
+letter-spacing:1px;
+}
+
+.social-icons{
+margin-top:0;
+display:flex;
+justify-content:center;
+gap:20px;
+}
+
+.social-icons a{
+display:flex;
+align-items:center;
+justify-content:center;
+width:55px;
+height:55px;
+background:#f3faf4;
+border-radius:50%;
+margin:0;
+transition:0.3s;
+}
+
+.social-icons a:hover{
+background:#2f7d4f;
+transform:translateY(-4px);
+}
+
+.social-icons img{
+height:26px;
+width:26px;
+transition:0.3s;
+}
+
+.social-icons a:hover img{
+filter:brightness(0) invert(1);
+}
+
+@media (max-width:768px){
+
+.contact-box{
+padding:30px 20px;
+}
+
 .email-contact{
-font-size:18px;
-margin-top:10px;
-}  
+font-size:16px;
+padding:10px 18px;
+}
+
+}
 
 /* GRID */
 
@@ -784,11 +854,13 @@ By integrating genomic and phenotypic data, SAGA aims to identify Salicornia spe
 
 <div class="contact-box">
 
+<p class="contact-subtitle">Interested in the SAGA project? Get in touch with us.</p>
+
 <p class="email-contact">
 📧 <a href="mailto:saga.prima.2026@gmail.com">saga.prima.2026@gmail.com</a>
 </p>
 
-<p class="about-text">Follow the project on social media</p>
+<p class="social-label">Follow us</p>
 
 <div class="social-icons">
 
