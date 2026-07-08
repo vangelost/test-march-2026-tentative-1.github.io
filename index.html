@@ -83,6 +83,7 @@ height:60px;
 .lang-switch a:hover{
   text-decoration:underline;
 }
+
 /* ABOUT SECTION WITH IMAGE */
 
 .about-flex{
@@ -107,6 +108,7 @@ height:auto;
 border-radius:12px;
 box-shadow:0 8px 20px rgba(0,0,0,0.12);
 }
+
 /* WP SUMMARY IMAGE */
 
 .wp-summary-image{
@@ -164,6 +166,7 @@ grid-template-columns:repeat(3,1fr);
 }
 
 }
+
 /* MOBILE: stack vertically */
 
 @media (max-width:768px){
@@ -178,12 +181,17 @@ max-width:100%;
 }
 
 }
+
 /* NAVBAR */
 
 nav{
 background:#3d9a63;
 padding:12px;
 text-align:center;
+position:sticky;
+top:0;
+z-index:998;
+box-shadow:0 2px 8px rgba(0,0,0,0.1);
 }
 
 nav a{
@@ -192,6 +200,19 @@ margin:15px;
 text-decoration:none;
 font-weight:600;
 font-size:17px;
+padding-bottom:3px;
+border-bottom:2px solid transparent;
+transition:0.25s;
+}
+
+nav a:hover{
+border-bottom:2px solid white;
+}
+
+/* Compensa l'altezza della nav sticky quando si clicca un'ancora */
+
+section[id]{
+scroll-margin-top:58px;
 }
 
 /* LANGUAGE DROPDOWN */
@@ -234,6 +255,7 @@ width:100%;
 height:auto;
 margin-top:20px;
 }
+
 /* CONTENT */
 
 .container{
@@ -286,6 +308,7 @@ transform:scale(1.2);
 font-size:18px;
 margin-top:10px;
 }  
+
 /* GRID */
 
 .grid{
@@ -299,6 +322,12 @@ background:white;
 padding:25px;
 border-radius:10px;
 box-shadow:0 5px 12px rgba(0,0,0,0.08);
+transition:transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover{
+transform:translateY(-6px);
+box-shadow:0 12px 22px rgba(47,125,79,0.18);
 }
 
 /* CAROUSEL */
@@ -381,6 +410,64 @@ background:#2f7d4f;
 color:white;
 text-align:center;
 padding:30px;
+}
+
+/* BACK TO TOP BUTTON */
+
+.back-to-top{
+position:fixed;
+bottom:30px;
+right:30px;
+width:50px;
+height:50px;
+background:#2f7d4f;
+color:white;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:22px;
+text-decoration:none;
+box-shadow:0 4px 12px rgba(0,0,0,0.25);
+opacity:0;
+visibility:hidden;
+transform:translateY(15px);
+transition:0.3s;
+z-index:999;
+}
+
+.back-to-top.visible{
+opacity:1;
+visibility:visible;
+transform:translateY(0);
+}
+
+.back-to-top:hover{
+background:#1f5c38;
+transform:scale(1.1);
+}
+
+@media (max-width:768px){
+.back-to-top{
+width:42px;
+height:42px;
+bottom:20px;
+right:20px;
+font-size:18px;
+}
+}
+
+/* SCROLL REVEAL ANIMATION */
+
+.reveal{
+opacity:0;
+transform:translateY(30px);
+transition:opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal.visible{
+opacity:1;
+transform:translateY(0);
 }
 
 /* MOBILE */
@@ -476,7 +563,7 @@ height:14px;
 
 <body>
 
-<header>
+<header id="top">
 
 <div class="header-container">
 
@@ -489,8 +576,8 @@ height:14px;
 
 <div class="header-right">
 
-<img src="partner_logo1.png" class="partner-logo">
-<img src="partner_logo2.png" class="partner-logo">
+<img src="partner_logo1.png" class="partner-logo" alt="Partner logo 1">
+<img src="partner_logo2.png" class="partner-logo" alt="Partner logo 2">
 
 <div class="language-dropdown">
 
@@ -526,12 +613,11 @@ height:14px;
 <section class="hero">
 
 <h1>Salicornia genotyping for sustainable soil and farming: from genes to agroecology</h1>
-<p></p>
-<img src="plant.jpg" class="image">
+<img src="plant.jpg" class="image" alt="Salicornia plant field">
 
 </section>
 
-<section class="container" id="about">
+<section class="container reveal" id="about">
 
 <h2 class="section-title">About the Project</h2>
 
@@ -562,7 +648,7 @@ By integrating genomic and phenotypic data, SAGA aims to identify Salicornia spe
 
 </section>
 
-<section class="container" id="objectives">
+<section class="container reveal" id="objectives">
 
 <h2 class="section-title">Project Objectives</h2>
 
@@ -584,9 +670,10 @@ By integrating genomic and phenotypic data, SAGA aims to identify Salicornia spe
 </div>
 
 </div>
+
 </section>
 
-<section class="container" id="workpackages">
+<section class="container reveal" id="workpackages">
 
 <h2 class="section-title">Work Packages</h2>
 
@@ -630,7 +717,7 @@ By integrating genomic and phenotypic data, SAGA aims to identify Salicornia spe
 
 </section>
 
-<section class="container" id="consortium">
+<section class="container reveal" id="consortium">
 
 <h2 class="section-title">Consortium</h2>
 
@@ -638,15 +725,15 @@ By integrating genomic and phenotypic data, SAGA aims to identify Salicornia spe
 
 <div class="carousel-track">
 
-<a href="partner1.html"><img src="partner1.png"></a>
-<a href="partner2.html"><img src="partner2.png"></a>
-<a href="partner3.html"><img src="partner3.png"></a>
-<a href="partner4.html"><img src="partner4.png"></a>
+<a href="partner1.html"><img src="partner1.png" alt="Partner 1 logo"></a>
+<a href="partner2.html"><img src="partner2.png" alt="Partner 2 logo"></a>
+<a href="partner3.html"><img src="partner3.png" alt="Partner 3 logo"></a>
+<a href="partner4.html"><img src="partner4.png" alt="Partner 4 logo"></a>
 
-<a href="partner1.html"><img src="partner1.png"></a>
-<a href="partner2.html"><img src="partner2.png"></a>
-<a href="partner3.html"><img src="partner3.png"></a>
-<a href="partner4.html"><img src="partner4.png"></a>
+<a href="partner1.html"><img src="partner1.png" alt="Partner 1 logo"></a>
+<a href="partner2.html"><img src="partner2.png" alt="Partner 2 logo"></a>
+<a href="partner3.html"><img src="partner3.png" alt="Partner 3 logo"></a>
+<a href="partner4.html"><img src="partner4.png" alt="Partner 4 logo"></a>
 
 
 </div>
@@ -655,11 +742,11 @@ By integrating genomic and phenotypic data, SAGA aims to identify Salicornia spe
 
 </section>
 
-<section class="container" id="map">
+<section class="container reveal" id="map">
 
 <div class="map-container">
 
-<img src="europe_map.png" class="europe-map">
+<img src="europe_map.png" class="europe-map" alt="Map of Europe and the Mediterranean showing SAGA partner locations">
 
 <a href="partner1.html" class="map-point" style="top:19%; left:43%;"></a>
 <a href="partner2.html" class="map-point" style="top:32%; left:3%;"></a>
@@ -670,7 +757,7 @@ By integrating genomic and phenotypic data, SAGA aims to identify Salicornia spe
 
 </section>
 
-<section class="container" id="publications">
+<section class="container reveal" id="publications">
 
 <h2 class="section-title">Publications</h2>
 
@@ -678,7 +765,7 @@ By integrating genomic and phenotypic data, SAGA aims to identify Salicornia spe
 
 </section>
 
-<section class="container" id="news">
+<section class="container reveal" id="news">
 
 <h2 class="section-title">News</h2>
 
@@ -686,7 +773,7 @@ By integrating genomic and phenotypic data, SAGA aims to identify Salicornia spe
 
 </section>
 
-<section class="container" id="contact">
+<section class="container reveal" id="contact">
 
 <h2 class="section-title">Contact</h2>
 
@@ -700,15 +787,15 @@ By integrating genomic and phenotypic data, SAGA aims to identify Salicornia spe
 
 <div class="social-icons">
 
-<a href="https://www.linkedin.com/" target="_blank">
+<a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">
 <img src="linkedin.png" alt="LinkedIn">
 </a>
 
-<a href="https://www.facebook.com/" target="_blank">
+<a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">
 <img src="facebook.png" alt="Facebook">
 </a>
 
-<a href="https://www.instagram.com/" target="_blank">
+<a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">
 <img src="instagram.png" alt="Instagram">
 </a>
 
@@ -725,6 +812,40 @@ By integrating genomic and phenotypic data, SAGA aims to identify Salicornia spe
 <p>© 2026 SAGA Consortium</p>
 
 </footer>
+
+<a href="#top" class="back-to-top" id="backToTop" aria-label="Torna all'inizio della pagina">↑</a>
+
+<script>
+
+/* BACK TO TOP: mostra il pulsante dopo 400px di scroll */
+
+window.addEventListener('scroll', function(){
+var btn = document.getElementById('backToTop');
+if(window.scrollY > 400){
+btn.classList.add('visible');
+}else{
+btn.classList.remove('visible');
+}
+});
+
+/* SCROLL REVEAL: le sezioni compaiono con fade+slide quando entrano nel viewport */
+
+var revealEls = document.querySelectorAll('.reveal');
+
+var observer = new IntersectionObserver(function(entries){
+entries.forEach(function(entry){
+if(entry.isIntersecting){
+entry.target.classList.add('visible');
+observer.unobserve(entry.target);
+}
+});
+}, { threshold: 0.15 });
+
+revealEls.forEach(function(el){
+observer.observe(el);
+});
+
+</script>
 
 </body>
 
