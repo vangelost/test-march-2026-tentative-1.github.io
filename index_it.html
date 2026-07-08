@@ -1,0 +1,921 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Progetto di Ricerca Europeo</title>
+
+<style>
+
+/* GENERAL */
+
+body{
+font-family:"Segoe UI", Arial;
+margin:0;
+background:#f3faf4;
+color:#333;
+}
+
+/* HEADER */
+
+header{
+background:white;
+padding:20px 40px;
+border-bottom:1px solid #e5e5e5;
+}
+
+.header-container{
+display:flex;
+align-items:center;
+justify-content:space-between;
+max-width:1200px;
+margin:auto;
+}
+
+.header-left{
+display:flex;
+align-items:center;
+gap:20px;
+}
+
+.logo{
+height:120px;
+}
+
+.project-title h1{
+margin:0;
+font-size:34px;
+color:#2f7d4f;
+}
+
+.project-title p{
+margin:5px 0 0 0;
+font-size:18px;
+color:#555;
+}
+
+.header-right{
+display:flex;
+align-items:center;
+gap:20px;
+}
+
+.partner-logo{
+height:60px;
+}
+
+.lang-switch{
+  position:absolute;
+  top:20px;
+  right:40px;
+  font-size:16px;
+}
+
+.lang-switch a{
+  color:#2f7d4f;
+  text-decoration:none;
+  font-weight:600;
+  margin-left:10px;
+}
+
+.lang-switch a:hover{
+  text-decoration:underline;
+}
+
+/* ABOUT SECTION WITH IMAGE */
+
+.about-flex{
+display:flex;
+align-items:center;
+gap:50px;
+}
+
+.about-flex .about-text{
+flex:1.4;
+}
+.about-image{
+flex:1;
+display:flex;
+justify-content:center;
+}
+
+.about-image img{
+width:100%;
+max-width:450px;
+height:auto;
+border-radius:12px;
+box-shadow:0 8px 20px rgba(0,0,0,0.12);
+}
+
+/* WP SUMMARY IMAGE */
+
+.wp-summary-image{
+margin-top:40px;
+width:100%;
+display:flex;
+justify-content:center;
+}
+
+.wp-summary-image img{
+width:100%;
+max-width:1100px;
+height:auto;
+border-radius:12px;
+box-shadow:0 8px 20px rgba(0,0,0,0.12);
+}
+
+@media (max-width:768px){
+
+.wp-summary-image{
+margin-top:25px;
+}
+
+}
+
+/* WP GRID: tutte le card sulla stessa linea */
+
+.wp-grid{
+grid-template-columns:repeat(6,1fr);
+gap:15px;
+}
+
+.wp-grid .card{
+padding:18px 15px;
+text-align:center;
+}
+
+.wp-grid .card h3{
+font-size:17px;
+margin-bottom:8px;
+color:#2f7d4f;
+}
+
+.wp-grid .card p{
+font-size:13.5px;
+line-height:1.45;
+}
+
+/* TABLET: passa a 3 colonne per non schiacciare troppo il testo */
+
+@media (max-width:1024px) and (min-width:769px){
+
+.wp-grid{
+grid-template-columns:repeat(3,1fr);
+}
+
+}
+
+/* MOBILE: stack vertically */
+
+@media (max-width:768px){
+
+.about-flex{
+flex-direction:column;
+gap:30px;
+}
+
+.about-image img{
+max-width:100%;
+}
+
+}
+
+/* NAVBAR */
+
+nav{
+background:#3d9a63;
+padding:12px;
+text-align:center;
+position:sticky;
+top:0;
+z-index:998;
+box-shadow:0 2px 8px rgba(0,0,0,0.1);
+}
+
+nav a{
+color:white;
+margin:15px;
+text-decoration:none;
+font-weight:600;
+font-size:17px;
+padding-bottom:3px;
+border-bottom:2px solid transparent;
+transition:0.25s;
+}
+
+nav a:hover{
+border-bottom:2px solid white;
+}
+
+/* Compensa l'altezza della nav sticky quando si clicca un'ancora */
+
+section[id]{
+scroll-margin-top:58px;
+}
+
+/* LANGUAGE DROPDOWN */
+
+.language-dropdown select{
+
+padding:8px 12px;
+
+border-radius:6px;
+
+border:1px solid #ccc;
+
+background:white;
+
+font-size:14px;
+
+cursor:pointer;
+
+}
+
+/* HERO */
+
+.hero{
+background:linear-gradient(rgba(0,0,0,0.45),rgba(0,0,0,0.45)), url("hero.jpg");
+background-size:cover;
+background-position:center;
+color:white;
+text-align:center;
+padding:20px 20px;
+}
+
+.hero h1{
+font-size:30px;
+margin-bottom:10px;
+}
+
+.image{
+max-width:800px;
+width:100%;
+height:auto;
+margin-top:20px;
+}
+
+/* CONTENT */
+
+.container{
+width:100%;
+padding:60px 80px;
+box-sizing:border-box;
+}
+
+.section-title{
+text-align:center;
+margin-bottom:40px;
+font-size:32px;
+color:#2f7d4f;
+}
+
+.about-text{
+font-size:18px;
+line-height:1.7;
+text-align:justify;
+width:100%;
+}
+  
+/* CONTACT SOCIAL */
+
+.contact-box{
+text-align:center;
+margin-top:20px;
+max-width:600px;
+margin-left:auto;
+margin-right:auto;
+background:white;
+padding:45px 40px;
+border-radius:14px;
+box-shadow:0 8px 22px rgba(0,0,0,0.08);
+}
+
+.contact-subtitle{
+font-size:16px;
+color:#666;
+margin-bottom:25px;
+}
+
+.email-contact{
+display:inline-flex;
+align-items:center;
+gap:10px;
+font-size:19px;
+font-weight:600;
+color:#2f7d4f;
+margin-top:0;
+padding:12px 24px;
+border:2px solid #2f7d4f;
+border-radius:30px;
+text-decoration:none;
+transition:0.3s;
+}
+
+.email-contact:hover{
+background:#2f7d4f;
+color:white;
+}
+
+.email-contact a{
+color:inherit;
+text-decoration:none;
+}
+
+.social-label{
+font-size:15px;
+color:#888;
+margin-top:35px;
+margin-bottom:15px;
+text-transform:uppercase;
+letter-spacing:1px;
+}
+
+.social-icons{
+margin-top:0;
+display:flex;
+justify-content:center;
+gap:20px;
+}
+
+.social-icons a{
+display:flex;
+align-items:center;
+justify-content:center;
+width:55px;
+height:55px;
+background:#f3faf4;
+border-radius:50%;
+margin:0;
+transition:0.3s;
+}
+
+.social-icons a:hover{
+background:#2f7d4f;
+transform:translateY(-4px);
+}
+
+.social-icons img{
+height:26px;
+width:26px;
+transition:0.3s;
+}
+
+.social-icons a:hover img{
+filter:brightness(0) invert(1);
+}
+
+@media (max-width:768px){
+
+.contact-box{
+padding:30px 20px;
+}
+
+.email-contact{
+font-size:16px;
+padding:10px 18px;
+}
+
+}
+
+/* GRID */
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+}
+
+.card{
+background:white;
+padding:25px;
+border-radius:10px;
+box-shadow:0 5px 12px rgba(0,0,0,0.08);
+transition:transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover{
+transform:translateY(-6px);
+box-shadow:0 12px 22px rgba(47,125,79,0.18);
+}
+
+/* CAROUSEL */
+
+.carousel{
+overflow:hidden;
+width:100%;
+margin-top:40px;
+}
+
+.carousel-track{
+display:flex;
+width:max-content;
+animation:scroll 18s linear infinite;
+align-items:center;
+}
+
+.carousel:hover .carousel-track{
+animation-play-state:paused;
+}
+
+.carousel-track img{
+height:140px;
+margin:0 40px;
+filter:grayscale(50%);
+opacity:0.8;
+transition:0.3s;
+}
+
+.carousel-track img:hover{
+filter:grayscale(0%);
+opacity:1;
+}
+
+@keyframes scroll{
+
+0%{
+transform:translateX(0);
+}
+
+100%{
+transform:translateX(-50%);
+}
+
+}
+
+/* MAP */
+
+.map-container{
+position:relative;
+max-width:800px;
+margin:auto;
+}
+
+.europe-map{
+width:100%;
+}
+
+.map-point{
+position:absolute;
+width:18px;
+height:18px;
+background:#2f7d4f;
+border-radius:50%;
+transform:translate(-50%,-50%);
+cursor:pointer;
+box-shadow:0 0 0 6px rgba(47,125,79,0.2);
+transition:0.3s;
+}
+
+.map-point:hover{
+background:#1f5c38;
+transform:translate(-50%,-50%) scale(1.3);
+}
+  
+/* FOOTER */
+
+footer{
+background:#2f7d4f;
+color:white;
+text-align:center;
+padding:30px;
+}
+
+/* BACK TO TOP BUTTON */
+
+.back-to-top{
+position:fixed;
+bottom:30px;
+right:30px;
+width:50px;
+height:50px;
+background:#2f7d4f;
+color:white;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:22px;
+text-decoration:none;
+box-shadow:0 4px 12px rgba(0,0,0,0.25);
+opacity:0;
+visibility:hidden;
+transform:translateY(15px);
+transition:0.3s;
+z-index:999;
+}
+
+.back-to-top.visible{
+opacity:1;
+visibility:visible;
+transform:translateY(0);
+}
+
+.back-to-top:hover{
+background:#1f5c38;
+transform:scale(1.1);
+}
+
+@media (max-width:768px){
+.back-to-top{
+width:42px;
+height:42px;
+bottom:20px;
+right:20px;
+font-size:18px;
+}
+}
+
+/* SCROLL REVEAL ANIMATION */
+
+.reveal{
+opacity:0;
+transform:translateY(30px);
+transition:opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal.visible{
+opacity:1;
+transform:translateY(0);
+}
+
+/* MOBILE */
+
+@media (max-width:768px){
+
+.header-container{
+flex-direction:column;
+gap:15px;
+text-align:center;
+}
+  
+.header-right{
+flex-direction:column;
+gap:10px;
+}
+
+.lang-switch{
+margin-top:5px;
+}
+.header-left{
+flex-direction:column;
+}
+
+.logo{
+height:80px;
+}
+
+.project-title h1{
+font-size:26px;
+}
+
+.partner-logo{
+height:45px;
+}
+
+.lang-switch{
+margin-top:10px;
+}
+
+nav{
+padding:10px;
+}
+
+nav a{
+display:inline-block;
+margin:8px;
+font-size:15px;
+}
+
+.hero{
+padding:40px 20px;
+}
+
+.hero h1{
+font-size:22px;
+}
+
+.container{
+padding:40px 25px;
+}
+
+.section-title{
+font-size:26px;
+}
+
+.grid{
+grid-template-columns:1fr;
+}
+
+.carousel-track img{
+height:90px;
+margin:0 20px;
+}
+
+.language-dropdown{
+margin-top:10px;
+}
+
+.language-dropdown select{
+width:120px;
+}
+.map-point{
+width:14px;
+height:14px;
+}
+
+}
+  
+</style>
+
+</head>
+
+<body>
+
+<header id="top">
+
+<div class="header-container">
+
+<div class="header-left">
+
+<img src="logo.png" alt="Logo del progetto" class="logo">
+
+
+</div>
+
+<div class="header-right">
+
+<img src="partner_logo1.png" class="partner-logo" alt="Logo partner 1">
+<img src="partner_logo2.png" class="partner-logo" alt="Logo partner 2">
+
+<div class="language-dropdown">
+
+<select onchange="location = this.value;">
+
+<option value="index.html">English</option>
+<option value="index_it.html" selected>Italiano</option>
+<option value="index_PT.html">Português</option>
+<option value="index_TR.html">Türkçe</option>
+<option value="index_TN.html">تونسي </option>  
+</select>
+
+</div>
+
+</div>
+
+</div>
+
+</header>
+
+<nav>
+
+<a href="#about">Chi siamo</a>
+<a href="#objectives">Obiettivi</a>
+<a href="#workpackages">Pacchetti di lavoro</a>
+<a href="#consortium">Consorzio</a>
+<a href="#publications">Pubblicazioni</a>
+<a href="#news">Notizie</a>
+<a href="#contact">Contatti</a>
+
+</nav>
+
+<section class="hero">
+
+<h1>Genotipizzazione della Salicornia per un suolo e un'agricoltura sostenibili: dai geni all'agroecologia</h1>
+<img src="plant.jpg" class="image" alt="Campo di piante di Salicornia">
+
+</section>
+
+<section class="container reveal" id="about">
+
+<h2 class="section-title">Il Progetto</h2>
+
+<div class="about-flex">
+
+<div class="about-text">
+<p>
+L'agricoltura nella regione mediterranea sta affrontando sfide ambientali sempre più importanti. I sistemi agricoli intensivi basati sulla monocoltura e su un elevato consumo di risorse contribuiscono alla scarsità d'acqua, al degrado del suolo e alla perdita di biodiversità. Combinate con gli effetti del cambiamento climatico, queste pressioni minacciano la sostenibilità agricola, la resilienza degli ecosistemi e la sicurezza alimentare a lungo termine. Affrontare queste sfide richiede una transizione verso sistemi agricoli che proteggano le risorse naturali rimanendo economicamente sostenibili.
+
+L'agroecologia è ampiamente riconosciuta come un percorso promettente verso un'agricoltura sostenibile. Integrando principi ecologici nelle pratiche agricole e promuovendo la diversificazione a livello di coltura, azienda agricola e paesaggio, i sistemi agroecologici mirano a rafforzare la biodiversità, migliorare la fertilità del suolo, conservare le risorse idriche e rafforzare la resilienza al cambiamento climatico. Questi obiettivi sono fortemente allineati con le principali priorità politiche europee, tra cui il Green Deal Europeo e la Strategia dell'UE per la Biodiversità 2030.
+
+Il progetto SAGA sostiene questa transizione attraverso un approccio partecipativo e guidato dalla scienza. Verranno istituiti Living Labs in Italia, Portogallo, Tunisia e Turchia, che riuniranno agricoltori, ricercatori, intermediari di conoscenza e decisori politici per testare e sviluppare insieme pratiche agroecologiche innovative adattate ai contesti locali.
+
+Un punto focale del progetto è il potenziale degli alofiti, piante naturalmente adattate agli ambienti salini. Tra questi, il genere Salicornia, originario del bacino del Mediterraneo, rappresenta una coltura particolarmente promettente grazie alla sua capacità di crescere in suoli altamente salini non adatti all'agricoltura convenzionale. La Salicornia può contribuire al ripristino del suolo, alla conservazione dell'acqua e alla resilienza dei sistemi agricoli nelle aree degradate e a rischio di salinizzazione.
+
+Per valorizzare questo potenziale, SAGA condurrà un programma integrato di genotipizzazione e fenotipizzazione su popolazioni di Salicornia raccolte in tutta la regione mediterranea. Utilizzando tecnologie di sequenziamento del DNA, il progetto analizzerà la variabilità genetica e chiarirà l'identificazione delle specie tra le popolazioni campionate in Italia, Portogallo, Tunisia e Turchia. Parallelamente, la caratterizzazione fenotipica valuterà tratti chiave come la capacità di accumulo di sale, le dinamiche di crescita, la produzione di biomassa e la composizione biochimica.
+
+Integrando dati genomici e fenotipici, SAGA mira a identificare le specie e i genotipi di Salicornia più adatti a migliorare la qualità del suolo, aumentare la ritenzione idrica e sostenere un'agricoltura sostenibile negli ambienti salini.
+
+</p>
+</div>
+
+<div class="about-image">
+<img src="about_salicornia.jpg" alt="Piante di Salicornia che crescono in suolo salino">
+</div>
+
+</div>
+
+</section>
+
+<section class="container reveal" id="objectives">
+
+<h2 class="section-title">Obiettivi del Progetto</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>Obiettivo 1</h3>
+<p>Studiare la biodiversità delle popolazioni naturali di Salicornia nel bacino del Mediterraneo.</p>
+</div>
+
+<div class="card">
+<h3>Obiettivo 2</h3>
+<p>Genotipizzare e fenotipizzare la Salicornia derivata da popolazioni naturali.</p>
+</div>
+
+<div class="card">
+<h3>Obiettivo 3</h3>
+<p>Selezionare genotipi con caratteristiche agroecologiche rilevanti.</p>
+</div>
+
+<div class="card">
+<h3>Obiettivo 4</h3>
+<p>Valutare l'efficacia agroecologica dei genotipi selezionati nei siti dimostrativi.</p>
+</div>
+  
+</div>
+
+</section>
+
+<section class="container reveal" id="workpackages">
+
+<h2 class="section-title">Pacchetti di Lavoro</h2>
+
+<div class="grid wp-grid">
+
+<div class="card">
+<h3>WP0</h3>
+<p>Coordinamento e gestione del progetto.</p>
+</div>
+
+<div class="card">
+<h3>WP1</h3>
+<p>Agroecologia nel bacino del Mediterraneo: problematiche, soluzioni e opportunità.</p>
+</div>
+
+<div class="card">
+<h3>WP2</h3>
+<p>Caratterizzazione delle popolazioni di Salicornia del bacino del Mediterraneo.</p>
+</div>
+
+<div class="card">
+<h3>WP3</h3>
+<p>Coltivazione dei genotipi selezionati di Salicornia.</p>
+</div>
+
+<div class="card">
+<h3>WP4</h3>
+<p>Valutazione della salute del suolo e della Salicornia e della diversità microbiologica del suolo.</p>
+</div>
+
+<div class="card">
+<h3>WP5</h3>
+<p>Disseminazione, sfruttamento, comunicazione e divulgazione (DECO).</p>
+</div>
+
+</div>
+
+<div class="wp-summary-image">
+<img src="wp_summary.jpg" alt="Diagramma riassuntivo dei Pacchetti di Lavoro SAGA e delle loro interconnessioni">
+</div>
+
+</section>
+
+<section class="container reveal" id="consortium">
+
+<h2 class="section-title">Consorzio</h2>
+
+<div class="carousel">
+
+<div class="carousel-track">
+
+<a href="partner1.html"><img src="partner1.png" alt="Logo partner 1"></a>
+<a href="partner2.html"><img src="partner2.png" alt="Logo partner 2"></a>
+<a href="partner3.html"><img src="partner3.png" alt="Logo partner 3"></a>
+<a href="partner4.html"><img src="partner4.png" alt="Logo partner 4"></a>
+
+<a href="partner1.html"><img src="partner1.png" alt="Logo partner 1"></a>
+<a href="partner2.html"><img src="partner2.png" alt="Logo partner 2"></a>
+<a href="partner3.html"><img src="partner3.png" alt="Logo partner 3"></a>
+<a href="partner4.html"><img src="partner4.png" alt="Logo partner 4"></a>
+
+
+</div>
+
+</div>
+
+</section>
+
+<section class="container reveal" id="map">
+
+<div class="map-container">
+
+<img src="europe_map.png" class="europe-map" alt="Mappa d'Europa e del Mediterraneo con le sedi dei partner SAGA">
+
+<a href="partner1.html" class="map-point" style="top:19%; left:43%;"></a>
+<a href="partner2.html" class="map-point" style="top:32%; left:3%;"></a>
+<a href="partner3.html" class="map-point" style="top:35%; left:90%;"></a>
+<a href="partner4.html" class="map-point" style="top:51%; left:41%;"></a>
+  
+</div>
+
+</section>
+
+<section class="container reveal" id="publications">
+
+<h2 class="section-title">Pubblicazioni</h2>
+
+<p>Articoli scientifici, dataset e report saranno elencati qui.</p>
+
+</section>
+
+<section class="container reveal" id="news">
+
+<h2 class="section-title">Notizie</h2>
+
+<p>Aggiornamenti del progetto, conferenze e risultati raggiunti.</p>
+
+</section>
+
+<section class="container reveal" id="contact">
+
+<h2 class="section-title">Contatti</h2>
+
+<div class="contact-box">
+
+<p class="contact-subtitle">Interessato al progetto SAGA? Contattaci.</p>
+
+<p class="email-contact">
+📧 <a href="mailto:saga.prima.2026@gmail.com">saga.prima.2026@gmail.com</a>
+</p>
+
+<p class="social-label">Seguici</p>
+
+<div class="social-icons">
+
+<a href="https://www.linkedin.com/in/saga-prima-3ba161416" target="_blank" rel="noopener noreferrer">
+<img src="linkedin.png" alt="LinkedIn">
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<footer>
+
+<p>SAGA fa parte del Programma PRIMA sostenuto dall'Unione Europea.</p>
+
+<p>© 2026 Consorzio SAGA</p>
+
+</footer>
+
+<a href="#top" class="back-to-top" id="backToTop" aria-label="Torna all'inizio della pagina">↑</a>
+
+<script>
+
+/* BACK TO TOP: mostra il pulsante dopo 400px di scroll */
+
+window.addEventListener('scroll', function(){
+var btn = document.getElementById('backToTop');
+if(window.scrollY > 400){
+btn.classList.add('visible');
+}else{
+btn.classList.remove('visible');
+}
+});
+
+/* SCROLL REVEAL: le sezioni compaiono con fade+slide quando entrano nel viewport */
+
+var revealEls = document.querySelectorAll('.reveal');
+
+var observer = new IntersectionObserver(function(entries){
+entries.forEach(function(entry){
+if(entry.isIntersecting){
+entry.target.classList.add('visible');
+observer.unobserve(entry.target);
+}
+});
+}, { threshold: 0.15 });
+
+revealEls.forEach(function(el){
+observer.observe(el);
+});
+
+</script>
+
+</body>
+
+</html>
