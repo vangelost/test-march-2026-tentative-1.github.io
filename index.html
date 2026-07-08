@@ -131,6 +131,39 @@ margin-top:25px;
 }
 
 }
+
+/* WP GRID: tutte le card sulla stessa linea */
+
+.wp-grid{
+grid-template-columns:repeat(6,1fr);
+gap:15px;
+}
+
+.wp-grid .card{
+padding:18px 15px;
+text-align:center;
+}
+
+.wp-grid .card h3{
+font-size:17px;
+margin-bottom:8px;
+color:#2f7d4f;
+}
+
+.wp-grid .card p{
+font-size:13.5px;
+line-height:1.45;
+}
+
+/* TABLET: passa a 3 colonne per non schiacciare troppo il testo */
+
+@media (max-width:1024px) and (min-width:769px){
+
+.wp-grid{
+grid-template-columns:repeat(3,1fr);
+}
+
+}
 /* MOBILE: stack vertically */
 
 @media (max-width:768px){
@@ -552,13 +585,11 @@ By integrating genomic and phenotypic data, SAGA aims to identify Salicornia spe
 
 </div>
 
-</section>
-
 <section class="container" id="workpackages">
 
 <h2 class="section-title">Work Packages</h2>
 
-<div class="grid">
+<div class="grid wp-grid">
 
 <div class="card">
 <h3>WP0</h3>
@@ -593,7 +624,7 @@ By integrating genomic and phenotypic data, SAGA aims to identify Salicornia spe
 </div>
 
 <div class="wp-summary-image">
-<img src="wp_summary.jpg" alt="Diagram summarizing the SAGA Work Packages and their interconnections">
+<img src="wp_summary.png" alt="Diagram summarizing the SAGA Work Packages and their interconnections">
 </div>
 
 </section>
