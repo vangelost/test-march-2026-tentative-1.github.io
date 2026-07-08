@@ -83,7 +83,45 @@ height:60px;
 .lang-switch a:hover{
   text-decoration:underline;
 }
+/* ABOUT SECTION WITH IMAGE */
 
+.about-flex{
+display:flex;
+align-items:center;
+gap:50px;
+}
+
+.about-flex .about-text{
+flex:1.4;
+}
+.about-image{
+flex:1;
+display:flex;
+justify-content:center;
+}
+
+.about-image img{
+width:100%;
+max-width:450px;
+height:auto;
+border-radius:12px;
+box-shadow:0 8px 20px rgba(0,0,0,0.12);
+}
+
+/* MOBILE: stack vertically */
+
+@media (max-width:768px){
+
+.about-flex{
+flex-direction:column;
+gap:30px;
+}
+
+.about-image img{
+max-width:100%;
+}
+
+}
 /* NAVBAR */
 
 nav{
@@ -441,7 +479,10 @@ height:14px;
 
 <h2 class="section-title">About the Project</h2>
 
-<p class="about-text">
+<div class="about-flex">
+
+<div class="about-text">
+<p>
 Agriculture in the Mediterranean region is increasingly facing major environmental challenges. Intensive farming systems based on monocultures and high resource consumption contribute to water scarcity, soil degradation, and biodiversity loss. Combined with the impacts of climate change, these pressures threaten agricultural sustainability, ecosystem resilience, and long-term food security. Addressing these challenges requires a transition toward farming systems that protect natural resources while remaining economically viable.
 
 Agroecology is widely recognized as a promising pathway toward sustainable agriculture. By integrating ecological principles into farming practices and promoting diversification at the crop, farm, and landscape levels, agroecological systems aim to enhance biodiversity, improve soil fertility, conserve water resources, and strengthen resilience to climate change. These goals are strongly aligned with major European policy priorities, including the European Green Deal and the EU Biodiversity Strategy for 2030.
@@ -455,6 +496,13 @@ To unlock this potential, SAGA will conduct an integrated genotyping and phenoty
 By integrating genomic and phenotypic data, SAGA aims to identify Salicornia species and genotypes best suited to improve soil quality, enhance water retention, and support sustainable agriculture in saline environments.
 
 </p>
+</div>
+
+<div class="about-image">
+<img src="about_salicornia.jpg" alt="Salicornia plants growing in saline soil">
+</div>
+
+</div>
 
 </section>
 
