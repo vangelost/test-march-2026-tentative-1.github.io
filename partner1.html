@@ -5,7 +5,16 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Partner Institution</title>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SL412RKK3R"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-SL412RKK3R');
+</script>
+
+<title>University of Pisa – SAGA Project</title>
 
 <style>
 
@@ -41,19 +50,7 @@ gap:20px;
 }
 
 .logo{
-height:80px;
-}
-
-.project-title h1{
-margin:0;
-font-size:34px;
-color:#2f7d4f;
-}
-
-.project-title p{
-margin:5px 0 0 0;
-font-size:18px;
-color:#555;
+height:120px;
 }
 
 .header-right{
@@ -66,12 +63,27 @@ gap:20px;
 height:60px;
 }
 
-/* NAV */
+/* LANGUAGE DROPDOWN */
+
+.language-dropdown select{
+padding:8px 12px;
+border-radius:6px;
+border:1px solid #ccc;
+background:white;
+font-size:14px;
+cursor:pointer;
+}
+
+/* NAVBAR */
 
 nav{
 background:#3d9a63;
 padding:12px;
 text-align:center;
+position:sticky;
+top:0;
+z-index:998;
+box-shadow:0 2px 8px rgba(0,0,0,0.1);
 }
 
 nav a{
@@ -80,35 +92,37 @@ margin:15px;
 text-decoration:none;
 font-weight:600;
 font-size:17px;
+padding-bottom:3px;
+border-bottom:2px solid transparent;
+transition:0.25s;
 }
-   
-/* LANGUAGE DROPDOWN */
 
-.language-dropdown select{
-
-padding:8px 12px;
-
-border-radius:6px;
-
-border:1px solid #ccc;
-
-background:white;
-
-font-size:14px;
-
-cursor:pointer;
-
+nav a:hover{
+border-bottom:2px solid white;
 }
-/* TITLE */
+
+section[id]{
+scroll-margin-top:58px;
+}
+
+/* PAGE TITLE */
 
 .page-title{
+background:linear-gradient(rgba(47,125,79,0.9),rgba(61,154,99,0.85));
+color:white;
 text-align:center;
-padding:60px 20px 20px 20px;
+padding:55px 20px;
 }
 
 .page-title h1{
-color:#2f7d4f;
-font-size:36px;
+margin:0;
+font-size:34px;
+}
+
+.page-title p{
+margin:10px 0 0 0;
+font-size:17px;
+opacity:0.95;
 }
 
 /* CONTENT */
@@ -116,7 +130,13 @@ font-size:36px;
 .container{
 max-width:1100px;
 margin:auto;
-padding:40px 20px;
+padding:50px 20px;
+}
+
+.section-title{
+color:#2f7d4f;
+font-size:26px;
+margin-bottom:25px;
 }
 
 /* PI SECTION */
@@ -126,41 +146,90 @@ display:flex;
 flex-wrap:wrap;
 gap:40px;
 align-items:center;
+background:white;
+padding:35px;
+border-radius:14px;
+box-shadow:0 8px 22px rgba(0,0,0,0.08);
 }
 
 .pi-photo{
 width:220px;
 border-radius:10px;
 box-shadow:0 5px 10px rgba(0,0,0,0.1);
+flex-shrink:0;
 }
 
 .pi-description{
 flex:1;
+min-width:260px;
 }
 
-.pi-description a{
+.pi-description h3{
+margin-top:0;
+font-size:22px;
+color:#333;
+}
+
+.pi-description p{
+line-height:1.7;
+font-size:17px;
+}
+
+.pi-links{
+margin-top:20px;
+display:flex;
+flex-wrap:wrap;
+gap:15px;
+}
+
+.pi-links a{
 color:#2f7d4f;
 font-weight:600;
 text-decoration:none;
+padding:10px 18px;
+border:2px solid #2f7d4f;
+border-radius:30px;
+transition:0.3s;
+font-size:15px;
+}
+
+.pi-links a:hover{
+background:#2f7d4f;
+color:white;
 }
 
 /* TEAM */
 
-.team-list{
-background:white;
-padding:25px;
-border-radius:10px;
-box-shadow:0 5px 12px rgba(0,0,0,0.08);
-margin-top:20px;
+.team-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:20px;
 }
 
 .team-member{
-padding:8px 0;
-border-bottom:1px solid #eee;
+background:white;
+padding:22px;
+border-radius:10px;
+box-shadow:0 5px 12px rgba(0,0,0,0.08);
+transition:transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.team-member:last-child{
-border-bottom:none;
+.team-member:hover{
+transform:translateY(-5px);
+box-shadow:0 12px 22px rgba(47,125,79,0.18);
+}
+
+.team-member h4{
+margin:0 0 8px 0;
+color:#2f7d4f;
+font-size:17px;
+}
+
+.team-member p{
+margin:0;
+font-size:14.5px;
+line-height:1.5;
+color:#555;
 }
 
 /* FOOTER */
@@ -170,8 +239,56 @@ background:#2f7d4f;
 color:white;
 text-align:center;
 padding:30px;
-margin-top:60px;
 }
+
+/* BACK TO TOP BUTTON */
+
+.back-to-top{
+position:fixed;
+bottom:30px;
+right:30px;
+width:50px;
+height:50px;
+background:#2f7d4f;
+color:white;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:22px;
+text-decoration:none;
+box-shadow:0 4px 12px rgba(0,0,0,0.25);
+opacity:0;
+visibility:hidden;
+transform:translateY(15px);
+transition:0.3s;
+z-index:999;
+}
+
+.back-to-top.visible{
+opacity:1;
+visibility:visible;
+transform:translateY(0);
+}
+
+.back-to-top:hover{
+background:#1f5c38;
+transform:scale(1.1);
+}
+
+/* SCROLL REVEAL ANIMATION */
+
+.reveal{
+opacity:0;
+transform:translateY(30px);
+transition:opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal.visible{
+opacity:1;
+transform:translateY(0);
+}
+
 /* MOBILE */
 
 @media (max-width:768px){
@@ -181,15 +298,12 @@ flex-direction:column;
 gap:15px;
 text-align:center;
 }
-  
+
 .header-right{
 flex-direction:column;
 gap:10px;
 }
 
-.lang-switch{
-margin-top:5px;
-}
 .header-left{
 flex-direction:column;
 }
@@ -198,16 +312,8 @@ flex-direction:column;
 height:80px;
 }
 
-.project-title h1{
-font-size:26px;
-}
-
 .partner-logo{
 height:45px;
-}
-
-.lang-switch{
-margin-top:10px;
 }
 
 nav{
@@ -220,78 +326,65 @@ margin:8px;
 font-size:15px;
 }
 
-.hero{
+.page-title{
 padding:40px 20px;
 }
 
-.hero h1{
-font-size:22px;
-}
-
-.container{
-padding:40px 25px;
-}
-
-.section-title{
+.page-title h1{
 font-size:26px;
 }
 
-.grid{
-grid-template-columns:1fr;
+.container{
+padding:40px 20px;
 }
 
-.carousel-track img{
-height:90px;
-margin:0 20px;
+.pi-section{
+padding:25px;
 }
 
-.language-dropdown{
-margin-top:10px;
+.pi-photo{
+width:160px;
 }
 
-.language-dropdown select{
-width:120px;
-}
-.map-point{
-width:14px;
-height:14px;
+.back-to-top{
+width:42px;
+height:42px;
+bottom:20px;
+right:20px;
+font-size:18px;
 }
 
 }
+
 </style>
 
 </head>
 
 <body>
 
-<header>
+<header id="top">
 
 <div class="header-container">
 
 <div class="header-left">
-
-<img src="logo.png" class="logo">
-
-</div>
-
+<img src="logo.png" alt="SAGA Project Logo" class="logo">
 </div>
 
 <div class="header-right">
 
-<img src="partner_logo1.png" class="partner-logo">
-<img src="partner_logo2.png" class="partner-logo">
+<img src="partner_logo1.png" class="partner-logo" alt="Partner logo 1">
+<img src="partner_logo2.png" class="partner-logo" alt="Partner logo 2">
 
 <div class="language-dropdown">
-
 <select onchange="location = this.value;">
-
 <option value="partner1.html">English</option>
 <option value="partner1_it.html">Italiano</option>
 <option value="partner1_PT.html">Português</option>
 <option value="partner1_TR.html">Türkçe</option>
-<option value="partner1_TN.html">تونسي </option>  
-</select>  
-   
+<option value="partner1_TN.html">تونسي </option>
+</select>
+</div>
+
 </div>
 
 </div>
@@ -299,87 +392,112 @@ height:14px;
 </header>
 
 <nav>
-
 <a href="index.html">Home</a>
 <a href="index.html#consortium">Consortium</a>
 <a href="index.html#contact">Contact</a>
-
 </nav>
 
-<section class="page-title">
-
-<h1>University of Pisa (coordinator) – Italy</h1>
-
+<section class="page-title reveal">
+<h1>University of Pisa (Coordinator) – Italy</h1>
+<p>Consortium partner of the SAGA project</p>
 </section>
 
-<div class="container">
+<section class="container reveal">
 
-<h2 style="color:#2f7d4f;">Principal Investigator and coordinator</h2>
+<h2 class="section-title">Principal Investigator and Coordinator</h2>
 
 <div class="pi-section">
 
-<img src="pi_photo_partner1.jpg" class="pi-photo">
+<img src="pi_photo_partner1.jpg" class="pi-photo" alt="Photo of Dr. Alberto Vangelisti">
 
 <div class="pi-description">
 
 <h3>Dr. Alberto Vangelisti</h3>
 
 <p>
-Dr. Alberto Vangelisti leads the research activities of the consortium partner
-at the University of Pisa. His work focuses principally on functional and 
-structural genmics applied to vegetal species  and sustainable strategies for crop 
-improvement.
+Dr. Alberto Vangelisti leads the research activities of the consortium partner at the University of Pisa. His work focuses principally on functional and structural genomics applied to vegetal species and sustainable strategies for crop improvement.
 </p>
 
-<p>
-🔗 <a href="https://pgagl.agr.unipi.it/" target="_blank">
-View University page
-</a>
-🔗 <a href="https://www.linkedin.com/in/alberto-vangelisti-a6a0a9155?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank">
-View Linkedin profile
-</a>
-</p>
-   
+<div class="pi-links">
+<a href="https://pgagl.agr.unipi.it/" target="_blank" rel="noopener noreferrer">🔗 View University page</a>
+<a href="https://www.linkedin.com/in/alberto-vangelisti-a6a0a9155" target="_blank" rel="noopener noreferrer">🔗 View LinkedIn profile</a>
 </div>
 
 </div>
 
 </div>
 
-<div class="container">
+</section>
 
-<h2 style="color:#2f7d4f;">Research Team</h2>
+<section class="container reveal">
 
-<div class="team-list">
+<h2 class="section-title">Research Team</h2>
+
+<div class="team-grid">
 
 <div class="team-member">
-Prof. Alberto Pardossi — Full professor expert of physiology and growing technology of greenhouse and nursery crops
+<h4>Prof. Alberto Pardossi</h4>
+<p>Full professor, expert in physiology and growing technology of greenhouse and nursery crops.</p>
 </div>
 
 <div class="team-member">
-Prof. Antonella Castagna — Associate professor expert of environmental stressors on plant biochemical and physiological processes
+<h4>Prof. Antonella Castagna</h4>
+<p>Associate professor, expert in the effects of environmental stressors on plant biochemical and physiological processes.</p>
 </div>
 
 <div class="team-member">
-Prof. Tommaso Giordani — Associate professor expert in genetics and genomics studies in plant species
+<h4>Prof. Tommaso Giordani</h4>
+<p>Associate professor, expert in genetics and genomics studies in plant species.</p>
 </div>
-   
+
 <div class="team-member">
-Prof. Francesca Galli — Associate professor with experience on European projects (FP7, H2020, HE) and national research projects
+<h4>Prof. Francesca Galli</h4>
+<p>Associate professor with experience in European projects (FP7, H2020, HE) and national research projects.</p>
 </div>
-   
+
 <div class="team-member">
-Dr. Susanna Pecchia — Assistant professor expert in plant pathology and molecular diagnosis on plant pathogens
-   
+<h4>Dr. Susanna Pecchia</h4>
+<p>Assistant professor, expert in plant pathology and molecular diagnosis of plant pathogens.</p>
 </div>
+
+</div>
+
+</section>
 
 <footer>
-
 <p>SAGA is part of the PRIMA Programme supported by the European Union.</p>
-
 <p>© 2026 SAGA Consortium</p>
-
 </footer>
+
+<a href="#top" class="back-to-top" id="backToTop" aria-label="Back to top">↑</a>
+
+<script>
+
+window.addEventListener('scroll', function(){
+var btn = document.getElementById('backToTop');
+if(window.scrollY > 400){
+btn.classList.add('visible');
+}else{
+btn.classList.remove('visible');
+}
+});
+
+var revealEls = document.querySelectorAll('.reveal');
+
+var observer = new IntersectionObserver(function(entries){
+entries.forEach(function(entry){
+if(entry.isIntersecting){
+entry.target.classList.add('visible');
+observer.unobserve(entry.target);
+}
+});
+}, { threshold: 0.15 });
+
+revealEls.forEach(function(el){
+observer.observe(el);
+});
+
+</script>
 
 </body>
 
