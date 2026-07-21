@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SL412RKK3R"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-SL412RKK3R');
+</script>
+
+<title>Università di Tunisi El Manar – Progetto SAGA</title>
+
+<style>
+
+/* GENERAL */
+
+body{
+font-family:"Segoe UI", Arial;
+margin:0;
+background:#f3faf4;
+color:#333;
+}
+
+/* HEADER */
+
+header{
+background:white;
+padding:20px 40px;
+border-bottom:1px solid #e5e5e5;
+}
+
+.header-container{
+display:flex;
+align-items:center;
+justify-content:space-between;
+max-width:1200px;
+margin:auto;
+}
+
+.header-left{
+display:flex;
+align-items:center;
+gap:20px;
+}
+
+.logo{
+height:120px;
+}
+
+.header-right{
+display:flex;
+align-items:center;
+gap:20px;
+}
+
+.partner-logo{
+height:60px;
+}
+
+/* LANGUAGE DROPDOWN */
+
+.language-dropdown select{
+padding:8px 12px;
+border-radius:6px;
+border:1px solid #ccc;
+background:white;
+font-size:14px;
+cursor:pointer;
+}
+
+/* NAVBAR */
+
+nav{
+background:#3d9a63;
+padding:12px;
+text-align:center;
+position:sticky;
+top:0;
+z-index:998;
+box-shadow:0 2px 8px rgba(0,0,0,0.1);
+}
+
+nav a{
+color:white;
+margin:15px;
+text-decoration:none;
+font-weight:600;
+font-size:17px;
+padding-bottom:3px;
+border-bottom:2px solid transparent;
+transition:0.25s;
+}
+
+nav a:hover{
+border-bottom:2px solid white;
+}
+
+section[id]{
+scroll-margin-top:58px;
+}
+
+/* PAGE TITLE */
+
+.page-title{
+background:linear-gradient(rgba(47,125,79,0.9),rgba(61,154,99,0.85));
+color:white;
+text-align:center;
+padding:55px 20px;
+}
+
+.page-title h1{
+margin:0;
+font-size:34px;
+}
+
+.page-title p{
+margin:10px 0 0 0;
+font-size:17px;
+opacity:0.95;
+}
+
+/* CONTENT */
+
+.container{
+max-width:1100px;
+margin:auto;
+padding:50px 20px;
+}
+
+.section-title{
+color:#2f7d4f;
+font-size:26px;
+margin-bottom:25px;
+}
+
+/* PI SECTION */
+
+.pi-section{
+display:flex;
+flex-wrap:wrap;
+gap:40px;
+align-items:center;
+background:white;
+padding:35px;
+border-radius:14px;
+box-shadow:0 8px 22px rgba(0,0,0,0.08);
+}
+
+.pi-photo{
+width:220px;
+border-radius:10px;
+box-shadow:0 5px 10px rgba(0,0,0,0.1);
+flex-shrink:0;
+}
+
+.pi-description{
+flex:1;
+min-width:260px;
+}
+
+.pi-description h3{
+margin-top:0;
+font-size:22px;
+color:#333;
+}
+
+.pi-description p{
+line-height:1.7;
+font-size:17px;
+}
+
+.pi-links{
+margin-top:20px;
+display:flex;
+flex-wrap:wrap;
+gap:15px;
+}
+
+.pi-links a{
+color:#2f7d4f;
+font-weight:600;
+text-decoration:none;
+padding:10px 18px;
+border:2px solid #2f7d4f;
+border-radius:30px;
+transition:0.3s;
+font-size:15px;
+}
+
+.pi-links a:hover{
+background:#2f7d4f;
+color:white;
+}
+
+/* TEAM */
+
+.team-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:20px;
+}
+
+.team-member{
+background:white;
+padding:22px;
+border-radius:10px;
+box-shadow:0 5px 12px rgba(0,0,0,0.08);
+transition:transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.team-member:hover{
+transform:translateY(-5px);
+box-shadow:0 12px 22px rgba(47,125,79,0.18);
+}
+
+.team-member h4{
+margin:0 0 8px 0;
+color:#2f7d4f;
+font-size:17px;
+}
+
+.team-member p{
+margin:0;
+font-size:14.5px;
+line-height:1.5;
+color:#555;
+}
+
+/* FOOTER */
+
+footer{
+background:#2f7d4f;
+color:white;
+text-align:center;
+padding:30px;
+}
+
+/* BACK TO TOP BUTTON */
+
+.back-to-top{
+position:fixed;
+bottom:30px;
+right:30px;
+width:50px;
+height:50px;
+background:#2f7d4f;
+color:white;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:22px;
+text-decoration:none;
+box-shadow:0 4px 12px rgba(0,0,0,0.25);
+opacity:0;
+visibility:hidden;
+transform:translateY(15px);
+transition:0.3s;
+z-index:999;
+}
+
+.back-to-top.visible{
+opacity:1;
+visibility:visible;
+transform:translateY(0);
+}
+
+.back-to-top:hover{
+background:#1f5c38;
+transform:scale(1.1);
+}
+
+/* SCROLL REVEAL ANIMATION */
+
+.reveal{
+opacity:0;
+transform:translateY(30px);
+transition:opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal.visible{
+opacity:1;
+transform:translateY(0);
+}
+
+/* MOBILE */
+
+@media (max-width:768px){
+
+.header-container{
+flex-direction:column;
+gap:15px;
+text-align:center;
+}
+
+.header-right{
+flex-direction:column;
+gap:10px;
+}
+
+.header-left{
+flex-direction:column;
+}
+
+.logo{
+height:80px;
+}
+
+.partner-logo{
+height:45px;
+}
+
+nav{
+padding:10px;
+}
+
+nav a{
+display:inline-block;
+margin:8px;
+font-size:15px;
+}
+
+.page-title{
+padding:40px 20px;
+}
+
+.page-title h1{
+font-size:26px;
+}
+
+.container{
+padding:40px 20px;
+}
+
+.pi-section{
+padding:25px;
+}
+
+.pi-photo{
+width:160px;
+}
+
+.back-to-top{
+width:42px;
+height:42px;
+bottom:20px;
+right:20px;
+font-size:18px;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header id="top">
+
+<div class="header-container">
+
+<div class="header-left">
+<img src="logo.png" alt="Logo del Progetto SAGA" class="logo">
+</div>
+
+<div class="header-right">
+
+<img src="partner_logo1.png" class="partner-logo" alt="Logo partner 1">
+<img src="partner_logo2.png" class="partner-logo" alt="Logo partner 2">
+
+<div class="language-dropdown">
+<select onchange="location = this.value;">
+<option value="partner4.html">English</option>
+<option value="partner4_it.html" selected>Italiano</option>
+<option value="partner4_PT.html">Português</option>
+<option value="partner4_TR.html">Türkçe</option>
+<option value="partner4_TN.html">تونسي </option>
+</select>
+</div>
+
+</div>
+
+</div>
+
+</header>
+
+<nav>
+<a href="index.html">Home</a>
+<a href="index.html#consortium">Consorzio</a>
+<a href="index.html#contact">Contatti</a>
+</nav>
+
+<section class="page-title reveal">
+<h1>Università di Tunisi El Manar – Tunisia</h1>
+<p>Partner del consorzio del progetto SAGA</p>
+</section>
+
+<section class="container reveal">
+
+<h2 class="section-title">Investigatrice Principale e Coordinatrice</h2>
+
+<div class="pi-section">
+
+<img src="pi_photo_partner4.jpg" class="pi-photo" alt="Foto della Prof.ssa Faten Gorsane">
+
+<div class="pi-description">
+
+<h3>Prof.ssa Faten Gorsane</h3>
+
+<p>
+La Prof.ssa Faten Gorsane guida le attività di ricerca del partner del consorzio presso l'Università di Tunisi El Manar. Il suo lavoro si concentra principalmente sulla genetica, con competenze in genomica, biotecnologia, interazioni pianta-microrganismo/pianta-patogeno/pianta-ambiente e ingegneria vegetale.
+</p>
+
+<div class="pi-links">
+<a href="https://utm.rnu.tn/utm/fr/" target="_blank" rel="noopener noreferrer">🔗 Visita la pagina dell'Università</a>
+<a href="https://www.linkedin.com/in/faten-gorsane-b803303aa/" target="_blank" rel="noopener noreferrer">🔗 Visita il profilo LinkedIn</a>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="container reveal">
+
+<h2 class="section-title">Team di Ricerca</h2>
+
+<div class="team-grid">
+
+<div class="team-member">
+<h4>Prof. Karim Ben Hamed</h4>
+<p>Professore presso il Centre de Biotechnologie de Borj Cédria, la sua competenza si concentra sulla fisiologia e biochimica molecolare delle piante, sullo sviluppo di condizioni di coltura per glicofite e alofite, sullo sviluppo di nuove piante resistenti allo stress e di metodi quantitativi per determinare la tolleranza allo stress delle piante, con competenza in metodi analitici per determinare metaboliti e composti secondari</p>
+</div>
+
+<div class="team-member">
+<h4>Prof. Hatem Fakhfakh</h4>
+<p>Professore presso la Facoltà di Scienze di Bizerte, la sua competenza è principalmente incentrata sulla genetica molecolare, l'immunologia e la biotecnologia.</p>
+</div>
+
+<div class="team-member">
+<h4>Dr.ssa Sonia Gharsallah</h4>
+<p>esperta in microbiologia e virologia molecolare.</p>
+</div>
+
+<div class="team-member">
+<h4>Dr. Tarek Slatni</h4>
+<p>esperto in piante estremofile e miglioramento della produttività vegetale in condizioni di stress biotico e abiotico.</p>
+</div>
+
+</div>
+
+</section>
+
+<footer>
+<p>SAGA fa parte del Programma PRIMA sostenuto dall'Unione Europea.</p>
+<p>© 2026 Consorzio SAGA</p>
+</footer>
+
+<a href="#top" class="back-to-top" id="backToTop" aria-label="Torna in cima">↑</a>
+
+<script>
+
+window.addEventListener('scroll', function(){
+var btn = document.getElementById('backToTop');
+if(window.scrollY > 400){
+btn.classList.add('visible');
+}else{
+btn.classList.remove('visible');
+}
+});
+
+var revealEls = document.querySelectorAll('.reveal');
+
+var observer = new IntersectionObserver(function(entries){
+entries.forEach(function(entry){
+if(entry.isIntersecting){
+entry.target.classList.add('visible');
+observer.unobserve(entry.target);
+}
+});
+}, { threshold: 0.15 });
+
+revealEls.forEach(function(el){
+observer.observe(el);
+});
+
+</script>
+
+</body>
+
+</html>
